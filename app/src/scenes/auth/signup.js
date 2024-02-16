@@ -74,15 +74,23 @@ export default () => {
               </div>
               <div className="mb-[25px]">
                 <div className="flex flex-col-reverse">
-                  <Field
-                    className="peer signInInputs"
-                    validate={(v) => validator.isEmpty(v) && "This field is Required"}
-                    name="password"
-                    type="password"
-                    id="password"
-                    value={values.password}
-                    onChange={handleChange}
-                  />
+                <Field
+                  className="peer signInInputs"
+                  validate={(v) => {
+                    if (validator.isEmpty(v)) return "This field is Required";
+                    if (v.length < 6) return "Password must be at least 6 characters.";
+                    // regex for checking if use of letters and numbers 
+                    if (!/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/.test(v)) {
+                      return "Password must contain both letters and numbers.";
+                    }
+                    return null; // Return null if successful validation
+                  }}
+                  name="password"
+                  type="password"
+                  id="password"
+                  value={values.password}
+                  onChange={handleChange}
+                />
                   <label className="peer-focus:text-[#116eee]" htmlFor="password">
                     Password
                   </label>
