@@ -68,6 +68,10 @@ const Detail = ({ user }) => {
                 <div className="text-[14px] text-[#212325] font-medium	">Email</div>
                 <input className="projectsInput text-[14px] font-normal text-[#212325] rounded-[10px]" name="email"  value={values.email} onChange={handleChange} />
               </div>
+              <div className="w-full md:w-[260px] mt-[10px] md:mt-0">
+                <div className="text-[14px] text-[#212325] font-medium	">Username</div>
+                <input className="projectsInput text-[14px] font-normal text-[#212325] rounded-[10px]" name="username"  value={values.username} onChange={handleChange} />
+              </div>
               <div className="w-full md:w-[165px] mt-[10px] md:mt-0">
                 <div className="text-[14px] text-[#212325] font-medium	">Status</div>
                 <select className="projectsInput text-[14px] font-normal text-[#212325] rounded-[10px]" type="select" name="status" value={values.status} onChange={handleChange}>
