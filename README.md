@@ -38,6 +38,22 @@ Time to be creative, and efficient. Do what you think would be the best for your
 
 Send us the project and answer to those simple questions : 
 - What bugs did you find ? How did you solve these and why ? 
-- Which feature did you develop and why ? 
+
+1. Debug of User page :
+The name button was disabled and the Update Button wasn't sending data to the API.
+I removed the disabled for the name field and change the OnChange by Onlcik to ensure the action.
+
+2. Debug of Project Page:
+The project page was not accessible. It was because the controler for project was using the MongoDB method find. It is used to retrieve all the corresponding project. For a single result as we want we are expecting a single project, findOne is more appropriate.
+
+3. Security Signup issue :
+The password wasn't enough secured, no minimum of charaters, no checking of content.
+I add the minimun of 8 characters and a regex to be sure that both numbers and letters were used.
+
+
+- Which feature did you develop and why ?
+On the page activity, I added the fact that each activity is done by a specific user. I added up because the app was not differentiate activity between users on a project.
+
 - Do you have any feedback about the code / architecture of the project and what was the difficulty you encountered while doing it ? 
 
+The Structure is not complex and have a MVC pattern. Many bugs concern more the ergonomic part and the dynamic of react is not always used, but the main elements are already present.

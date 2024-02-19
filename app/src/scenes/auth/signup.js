@@ -78,7 +78,7 @@ export default () => {
                   className="peer signInInputs"
                   validate={(v) => {
                     if (validator.isEmpty(v)) return "This field is Required";
-                    if (v.length < 6) return "Password must be at least 6 characters.";
+                    if (v.length < 8) return "Password must be at least 8 characters.";
                     // regex for checking if use of letters and numbers 
                     if (!/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/.test(v)) {
                       return "Password must contain both letters and numbers.";
